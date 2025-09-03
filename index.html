@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Birthday Background</title>
+  <link rel="stylesheet" href="style.css">
+
+  <link href="https://fonts.googleapis.com/css2?family=Bungee&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap" rel="stylesheet">
+  <!--background chat gpt-->
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+      background: linear-gradient(45deg, #ffe0f0, #ffd8d8, #fff0f5);
+      background-size: 600% 600%;
+      animation: backgroundMove 20s ease infinite;
+    }
+
+    @keyframes backgroundMove {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    /* Balloons */
+    .balloon {
+      position: absolute;
+      width: 60px;
+      height: 80px;
+      background-color: rgba(255, 105, 180, 0.8);
+      border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+      animation: floatUp 10s linear infinite;
+    }
+
+    .balloon::after {
+      content: "";
+      position: absolute;
+      bottom: -20px;
+      left: 50%;
+      width: 2px;
+      height: 30px;
+      background: #555;
+      transform: translateX(-50%);
+    }
+
+    @keyframes floatUp {
+      0% {
+        transform: translateY(0);
+        opacity: 1;
+      }
+      100% {
+        transform: translateY(-120vh);
+        opacity: 0;
+      }
+    }
+
+    /* Create multiple balloons with different positions/colors/speeds */
+    .balloon:nth-child(1) {
+      left: 10%;
+      animation-duration: 12s;
+      background-color: #ff69b4;
+    }
+  
+    /* Confetti */
+    .confetti {
+      position: absolute;
+      width: 8px;
+      height: 8px;
+      background-color: red;
+      animation: fall 5s linear infinite;
+    }
+
+    @keyframes fall {
+      0% {
+        transform: translateY(0) rotate(0deg);
+        opacity: 1;
+      }
+      100% {
+        transform: translateY(100vh) rotate(360deg);
+        opacity: 0;
+      }
+    }
+
+    /* Generate multiple confetti pieces */
+    .confetti:nth-child(6) {
+      left: 10%;
+      animation-duration: 4s;
+      background: #f44336;
+    }
+
+    .confetti:nth-child(7) {
+      left: 30%;
+      animation-duration: 5s;
+      background: #e91e63;
+    }
+
+    .confetti:nth-child(8) {
+      left: 50%;
+      animation-duration: 6s;
+      background: #ffeb3b;
+    }
+
+    .confetti:nth-child(9) {
+      left: 70%;
+      animation-duration: 4.5s;
+      background: #4caf50;
+    }
+
+    .confetti:nth-child(10) {
+      left: 90%;
+      animation-duration: 5.5s;
+      background: #2196f3;
+    }
+
+  </style>
+</head>
+<body>
+
+  <!-- Balloons -->
+  <div class="balloon"></div>
+  <div class="balloon"></div>
+  <div class="balloon"></div>
+  <div class="balloon"></div>
+  <div class="balloon"></div>
+
+  <!-- Confetti -->
+  <div class="confetti"></div>
+  <div class="confetti"></div>
+  <div class="confetti"></div>
+  <div class="confetti"></div>
+  <div class="confetti"></div>
+
+  <!-- MY CODE -->
+  <div class="envelope">
+    <div class="happybd">
+        <h2>
+            HAPPY 
+        </h2>
+        <div class="bd">
+            BIRTHDAY 
+        </div>
+        <div class="picchhing">
+            <img src="image.png">
+            <audio controls autoplay loop style="display: none;">
+              <source src="OIIAOIIA_CAT_Happy_Birthday.mp3" type="audio/mpeg">
+            </audio>
+
+
+
+        </div>
+    </div>
+    <div class="ching">
+        <h3>
+            CHING!!!!!!!!!!
+        </h3>
+  </div>
+  <div>
+    
+  </div>
+
+
+<!--chat gpt any click for the audio-->
+<script>
+  window.addEventListener('load', () => {
+    const audio = document.querySelector('audio');
+    if (audio) {
+      audio.play().catch(err => {
+        // Autoplay was blocked, try again on user interaction
+        window.addEventListener('click', () => {
+          audio.play();
+        }, { once: true });
+      });
+    }
+  });
+</script>
+
+</body>
+</html>
